@@ -1,5 +1,6 @@
 package id.ac.polinema.skorviewmodel.viewmodels;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
@@ -41,9 +42,26 @@ public class ScoreViewModel extends ViewModel {
     }
 
     public void onAddAwayClick(View view) {
+        Log.e("tests","sadsadasdsad");
         ScoreFragmentDirections.GoalScorerAction action =
                 ScoreFragmentDirections.goalScorerAction(ScoreFragment.AWAY);
         Navigation.findNavController(view).navigate(action);
+    }
+
+    public String getHomeScorer() {
+        String text = "";
+        for (GoalScorer goalScorer : homeGoalScorerList.getValue()){
+            text+=goalScorer.toString();
+        }
+        return text;
+    }
+
+    public String getAwayScorer() {
+        String text = "";
+        for (GoalScorer goalScorer : awayGoalScorerList.getValue()){
+            text+=goalScorer.toString();
+        }
+        return text;
     }
 
 }

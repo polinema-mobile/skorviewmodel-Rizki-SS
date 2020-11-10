@@ -49,7 +49,7 @@ public class GoalFragment extends Fragment {
 	public void onSaveClicked(View view) {
 		Bundle bundle = new Bundle();
 		bundle.putParcelable(ScoreFragment.SCORER_KEY, goalScorer);
-		// set goalscorer use viewmodel
+
 		viewModel.setGoalScorer(requestKey, goalScorer);
 		Navigation.findNavController(view).navigateUp();
 	}

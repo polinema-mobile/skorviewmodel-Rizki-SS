@@ -40,6 +40,7 @@ public class ScoreFragment extends Fragment {
 			.inflate(inflater, R.layout.fragment_score, container, false);
 		// instance viewmodel here
 		viewModel = new ViewModelProvider(requireActivity()).get(ScoreViewModel.class);
+		binding.setVm(viewModel);
 		return binding.getRoot();
 	}
 
